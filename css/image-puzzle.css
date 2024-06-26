@@ -11,10 +11,11 @@ h2 {
 }
 
 h3 {
-    font-weight: normal;
+    font-weight: bold;
     margin: 3px 0px;
     text-align: center;
     font-family: "Audiowide", sans-serif;
+    font-size: 25px;
 }
 
 .heading {
@@ -40,11 +41,13 @@ h3 {
 
 .playbox {
     display: flex;
-    gap: 10vw;
-    text-align: center;
+    /* text-align: center; */
+    align-items: center;
+    justify-content: space-between;
     margin: auto;
     width:65vw;
-    vertical-align: top;
+    height: 35vw;
+    /* vertical-align: top; */
     background-color: rgb(241, 106, 10);
     position: relative;
     top:2vw;
@@ -54,9 +57,17 @@ h3 {
     box-shadow: rgba(39, 97, 121, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px
 }
 .actualImageBox {
-    display: inline-block;
-    vertical-align: top;
+    display:flex;
+    /* vertical-align: top; */
     width: 280vw;
+    flex-direction: column;
+    align-items: center;
+    color: whitesmoke;
+   
+}
+
+.puzzle_image{
+    color: whitesmoke;
 }
 
 #collage #stepBox,
@@ -79,6 +90,7 @@ h3 {
     background-color: rgb(241, 106, 10);
     border-radius: 10%;
     width: 10vw;
+    height:100px;
     align-items: center;
     justify-content: center;
     padding: 24px; 
@@ -147,27 +159,28 @@ h3 {
 
 }
 
-#collage #sortable {
-    border: 2px solid #a46;
+#sortable {
     list-style-type: none;
-    display: inline-block;
-
-    padding: 0;
-    width: 400px;
-    height: 400px;
-}
-
-#collage #sortable li {
-    background-size: 400% 400%;
-    border: none;
-    cursor: pointer;
     margin: 0;
     padding: 0;
-    float: left;
-    width: 100px;
-    height: 100px;
+    width: 450px; /* Adjust according to your image size */
+    height: 450px; /* Adjust according to your image size */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
 }
 
+#sortable li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #020100;
+    border: 2px solid #090909;
+    cursor: pointer;
+}
 button {
     margin: 10px;
     color: black;
@@ -365,4 +378,3 @@ button:hover {
         margin: 10px;
     }
 }
-

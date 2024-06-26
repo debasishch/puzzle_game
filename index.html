@@ -8,7 +8,9 @@
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/image-puzzle.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script> <!-- Added Touch Punch -->
+     <!-- Added Touch Punch  -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script> -->
+    
     <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,7 +65,7 @@
         <div id="gameOver" style="display:none;">
             <div class="dashboard">
                 <h2>You Loss</h2>
-                Better Luck Next Time!! <br />
+                <!-- Better Luck Next Time!! <br /> -->
                 <br />
                 <!-- Time: <span class="stepCount">0</span> gear.
                 <br />
@@ -90,7 +92,7 @@
             ];
             
             $(function () {
-                var gridSize = 4;
+                var gridSize = 3;
                 imagePuzzle.startGame(images, gridSize);
                 $('#newPhoto').click(function () {
                     // var gridSize = $('#levelPanel :radio:checked').val();

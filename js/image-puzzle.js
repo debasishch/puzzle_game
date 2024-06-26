@@ -1,7 +1,7 @@
 ﻿// image-puzzle.js
 
 var imagePuzzle = (function() {
-    var gridSize = 4;
+    var gridSize = 3; // Set default grid size to 3
     var images = [];
     var currentImage = {};
     var timer;
@@ -10,19 +10,18 @@ var imagePuzzle = (function() {
 
     function init(imgs) {
         images = imgs;
-        gridSize = 4;
+        gridSize = 3; // Default grid size
         $('#imgTitle').text('');
         $('#sortable').html('');
         $('#actualImage').attr('src', '');
         $('#stepBox .stepCount').text(0);
-        $('#timerPanel').text(90);
-        $('#levelPanel input:radio[value="4"]').prop('checked', true);
+        $('#timerPanel').text(60);
         startGame(images, gridSize);
     }
 
     function startGame(imgs, size) {
         clearInterval(timer);
-        countdown = 90;
+        countdown = 60;
         stepCount = 0;
         $('#timerPanel').text(countdown);
         $('#stepBox .stepCount').text(stepCount);
@@ -75,6 +74,7 @@ var imagePuzzle = (function() {
             $('#gameOver h2').text('You win!');
             $('#gameOver').show();
         }
+        
     }
 
     function updateTimer() {
@@ -108,7 +108,7 @@ $(function() {
     imagePuzzle.init(images);
 
     $('#newPhoto').click(function() {
-        var gridSize = $('#levelPanel :radio:checked').val();
+        var gridSize = 3; // Set grid size to 3
         imagePuzzle.startGame(images, gridSize);
     });
 
