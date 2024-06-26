@@ -222,7 +222,63 @@ button:hover {
     border-radius: 10px;
 }
 
+#gameOver {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    max-width: 400px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
 
+#gameOver h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #007BFF;
+}
+
+#gameOver p {
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: #333;
+}
+
+#gameOver button {
+    margin: 10px;
+    color: white;
+    border: none;
+    font-size: 18px;
+    height: auto;
+    width: auto;
+    padding: 10px 20px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #007BFF;
+}
+
+#gameOver button:hover {
+    background-color: #0056b3;
+}
+
+/* Overlay for the pop-up */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
 
 @media (max-width: 1200px) {
     .playbox {
