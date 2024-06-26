@@ -8,6 +8,7 @@
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/image-puzzle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script> <!-- Added Touch Punch -->
     <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,24 +25,23 @@
         <hr />
         <!-- box start -->
         <div class="header2">
-            <div id="playPanel">
-                <h3 id="imgTitle"></h3>
+            <!-- <div class="playPanel"> -->
+                <!-- <h3 id="imgTitle"></h3> -->
                 <!-- <hr /> -->
                 <div class="playbox">
-                    <div>
+                    <div class="puzzle_box">
                         <div class="puzzle_image"><h3>PUZZLE IMAGE</h3></div>
                         <ul id="sortable" class="sortable"></ul>
                     </div>
-                    <div id="actualImageBox">
-                        <div class="actual_image"><h3>ACTUAL IMAGE</h3></div>
+                    <div class="actualImageBox">
+                        <h3>ACTUAL IMAGE</h3>
                         <img id="actualImage" />
                         <button id="newPhoto" type="button" class="btn">Change Puzzle</button>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
             <!-- box end -->
-             <div class="time">
-            <div style="padding-right:10px;">
+            <div class="time">
                 <div id="stepBox">
                     <div class="Count">Count:
                         <div class="stepCount">0</div>
@@ -50,17 +50,14 @@
                 <div id="timeBox" style="display: flex;">
                     Time: <span id="timerPanel"> </span> seconds
                 </div>
-            </div>
         </div>
         </div>
-        <!-- <div style="padding: 24px; align-items: center;">
-            <div>Solve the puzzle.</div>
+        <!-- <div class="set_level">
+            <div>Set Level</div>
             <p id="levelPanel">
                 <input type="radio" name="level" id="easy" checked="checked" value="3" /> <label for="easy">Easy</label>
                 <input type="radio" name="level" id="medium" value="4" /> <label for="medium">Medium</label>
                 <input type="radio" name="level" id="hard" value="5" /> <label for="hard">Hard</label>
-                <input type="radio" name="level" id="veryhard" value="6" /> <label for="veryhard">Very
-                    Hard</label>
             </p>
         </div> -->
         <div id="gameOver" style="display:none;">
@@ -93,7 +90,7 @@
             ];
             
             $(function () {
-                var gridSize = 3;
+                var gridSize = 4;
                 imagePuzzle.startGame(images, gridSize);
                 $('#newPhoto').click(function () {
                     // var gridSize = $('#levelPanel :radio:checked').val();
