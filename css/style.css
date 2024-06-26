@@ -1,0 +1,65 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+/* General styles */
+body {
+    font-family: 'Segoe UI', Calibri, Arial;
+    margin: 0;
+    background-color: navajowhite;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+    color: rgb(49, 48, 48);
+}
+
+h2 {
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+h3 {
+    font-weight: normal;
+    margin: 3px 0px;
+    text-align: center;
+    font-family: "Audiowide", sans-serif;
+}
+
+.heading {
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.header {
+    display: flex;
+    gap: 6px;
+    justify-content: left;
+    align-items: center;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .header .logo {
+        width: 150px; /* Example adjustment for logo size */
+        height: auto;
+    }
+
+    .header .heading {
+        font-size: 20px; /* Example adjustment for heading size */
+        margin-left: 0; /* Reset margin for heading */
+    }
+
+    /* Add more responsive adjustments as needed */
+}
+
+.header2 {
+    display: flex;
+}

@@ -1,0 +1,160 @@
+﻿#collage hr {
+    border: none;
+    border-top: 2px solid #a7a3a3;
+    height: 1px;
+}
+
+#collage #playPanel {
+    background-color: rgb(254, 99, 27);
+    box-shadow: rgba(39, 97, 121, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding: 10px 0px;
+    margin: 30px auto;
+    /* width:80%; */
+    border-radius: 30px;
+    max-height: fit-content;
+    width: 70%;
+    padding: 5px;
+    display: none;
+    display: flex;
+    align-items: left;
+
+}
+
+#collage #actualImageBox {
+    display: inline-block;
+    /* font-size:0.8em; */
+    /* margin: 10px; */
+    vertical-align: top;
+    width: 280vw;
+}
+
+#collage #stepBox,
+#collage #timeBox {
+    display: flex;
+    width: 48%;
+    font-size: x-large;
+    font-weight: bold;
+    /* margin-bottom: 5px; */
+    margin-left: 50px;
+    position: relative;
+    right: 20px;
+    border: black;
+    /* flex-direction: column; */
+    justify-content: center;
+    margin-right: 20px;
+
+
+}
+
+#timebox {
+    padding: 6px 6px;
+    margin: 6px 6px;
+}
+
+#collage #stepBox div {
+    background: #82a6cd;
+    display: flex;
+    padding: 1px 4px;
+    margin: 0px auto;
+    max-width: 800px;
+    border-radius: 8px;
+
+}
+
+#collage img#actualImage {
+    border: 2px solid #a46;
+    margin-top: 9px;
+    height: 280px;
+    width: 280px;
+
+}
+
+#collage #sortable {
+    border: 2px solid #a46;
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px;
+    padding: 0;
+    width: 400px;
+    height: 400px;
+    /* pointer-events: none; */
+}
+
+#collage #sortable li {
+    background-size: 400% 400%;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+
+button {
+    margin: 10px;
+    color: black;
+    border: 1px solid rgb(57, 57, 230);
+    display: inline;
+    font-size: 18px;
+    height: auto;
+    width: auto;
+    padding: 10px 20px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: aqua;
+
+
+}
+
+button:hover {
+    background-color: darkgoldenrod;
+}
+
+.time {
+    height: 2cm;
+    width: 4cm;
+    background-color: aquamarine;
+    justify-content: center;
+    border-radius: 8%;
+    margin-right: 80px;
+    padding-left: 50px;
+    padding-right: 40px;
+    padding-top: 20px;
+    margin: black;
+
+}
+
+.playbox {
+    display: flex;
+    gap: 120px;
+    text-align: center;
+    margin: auto;
+    width: 80%;
+    vertical-align: top;
+    /* border: white solid 1px; */
+}
+
+.puzzle_box {
+    font-weight: bold;
+    font-size: large;
+    color: white;
+}
+
+.count {
+    display: flex;
+
+}
+
+#timerPanel {
+    color: red;
+    padding-right: 5px;
+}
+
+.dashboard {
+    background-color: #EADDCA;
+    padding: 5px 10px 20px 10px;
+    text-align: center;
+    border-radius: 10px;
+}

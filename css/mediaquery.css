@@ -1,0 +1,29 @@
+@media (max-width: 768px) {
+    #collage .collage-header {
+      flex-direction: column; /* Stack elements vertically on small screens */
+      align-items: center; /* Center elements horizontally */
+    }
+  
+    #collage .play-panel, #collage .time {
+      width: 100%; /* Make elements take full width on small screens */
+      margin: 10px auto; /* Center elements horizontally */
+    }
+  
+    #collage #actualImageBox, #collage #sortable {
+      width: 100%; /* Make elements take full width on small screens */
+    }
+  }
+  
+/* Target screens less than 480px wide */
+@media screen and (max-width: 480px) {
+    h1, h3 {
+      font-size: 1.2rem; /* Reduce font size for very small screens */
+    }
+  }
+  
+  /* Target screens between 480px and 768px wide */
+  @media screen and (min-width: 480px) and (max-width: 768px) {
+    h1, h3 {
+      font-size: 1.5rem; /* Adjust font size for medium screens */
+    }
+  }
