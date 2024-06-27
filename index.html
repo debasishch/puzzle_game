@@ -8,7 +8,6 @@
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script src="js/image-puzzle.js"></script>
-    <!-- Added Touch Punch -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     
     <link rel="shortcut icon" href="./img/logo.jpg" type="image/x-icon">
@@ -17,12 +16,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        /* Improve touch responsiveness */
         .ui-sortable-handle {
             touch-action: none;
         }
-
-        /* Enhance touch interaction visual feedback */
         .ui-sortable-dragging {
             background-color: rgba(0, 0, 0, 0.2);
         }
@@ -86,6 +82,13 @@
                 { src: 'img/nobita.webp' }
             ];
 
+            var stepCount = 0;
+
+            function updateStepCount() {
+                stepCount++;
+                $('.stepCount').text(stepCount);
+            }
+
             function checkIfPuzzleCompleted() {
                 var items = $('#sortable').children();
                 for (var i = 0; i < items.length; i++) {
@@ -111,6 +114,7 @@
                     },
                     stop: function(event, ui) {
                         ui.item.removeClass('ui-sortable-dragging');
+                        updateStepCount();
                         if (checkIfPuzzleCompleted()) {
                             $('#gameOverMessage').text('You Win!');
                             $('#gameOver').show();
@@ -127,12 +131,16 @@
 
                 $('#newPhoto').click(function () {
                     $('#gameOver').hide(); // Hide the game over message
+                    stepCount = 0; // Reset step count
+                    $('.stepCount').text(stepCount); // Update the displayed step count
                     imagePuzzle.startGame(images, gridSize);
                 });
 
                 $('#levelPanel :radio').change(function (e) {
                     gridSize = $(this).val();
                     $('#gameOver').hide(); // Hide the game over message
+                    stepCount = 0; // Reset step count
+                    $('.stepCount').text(stepCount); // Update the displayed step count
                     imagePuzzle.startGame(images, gridSize);
                 });
             });
