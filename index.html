@@ -76,21 +76,21 @@
 
         <script>
             var images = [
-                { src: 'img/cat.jpeg' },
-                { src: 'img/cartoon.jpeg' },
-                { src: 'img/OIP.jpeg' },
-                { src: 'img/download.jpeg' },
-                { src: 'img/french_polynesia.jpeg' },
-                { src: 'img/south_africa.jpeg' },
-                { src: 'img/vietnam.jpeg' },
-                { src: 'img/scotland.jpeg' },
-                { src: 'img/scenery.jpeg' }
+                { src: 'img/dora.jpeg' },
+                { src: 'img/jerry.jpeg' },
+                { src: 'img/mario.jpeg' },
+                { src: 'img/micky_mouse.jpeg' },
+                { src: 'img/monkey.png' },
+                { src: 'img/pikachu.png' },
+                { src: 'img/tom.png' },
+                { src: 'img/doraemon.png' },
+                { src: 'img/nobita.webp' }
             ];
 
             function checkIfPuzzleCompleted() {
                 var items = $('#sortable').children();
                 for (var i = 0; i < items.length; i++) {
-                    if ($(items[i]).data('index') != i) {
+                    if ($(items[i]).data('pos') != i) {
                         return false;
                     }
                 }
@@ -125,11 +125,13 @@
                 }).disableSelection();
 
                 $('#newPhoto').click(function () {
+                    $('#gameOver').hide(); // Hide the game over message
                     imagePuzzle.startGame(images, gridSize);
                 });
 
                 $('#levelPanel :radio').change(function (e) {
                     gridSize = $(this).val();
+                    $('#gameOver').hide(); // Hide the game over message
                     imagePuzzle.startGame(images, gridSize);
                 });
             });
