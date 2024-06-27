@@ -1,10 +1,12 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 
 /* General styles */
 body {
     font-family: 'Segoe UI', Calibri, Arial;
     margin: 0;
-    background-color: navajowhite;
+    background-color: #2e3e51
 }
 
 
@@ -30,5 +32,7 @@ body {
 }
 
 .header2 {
-    display: flex;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
 }
