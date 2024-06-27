@@ -80,7 +80,6 @@
                 { src: 'img/jerry.jpeg' },
                 { src: 'img/mario.jpeg' },
                 { src: 'img/micky_mouse.jpeg' },
-                { src: 'img/monkey.png' },
                 { src: 'img/pikachu.png' },
                 { src: 'img/tom.png' },
                 { src: 'img/doraemon.png' },
@@ -104,9 +103,11 @@
                 $('#sortable').sortable({
                     cursor: 'move',
                     tolerance: 'pointer',
+                    containment: 'parent',
                     start: function(event, ui) {
                         ui.item.addClass('ui-sortable-dragging');
                         ui.placeholder.height(ui.item.height());
+                        ui.placeholder.width(ui.item.width());
                     },
                     stop: function(event, ui) {
                         ui.item.removeClass('ui-sortable-dragging');
