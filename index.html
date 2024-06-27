@@ -106,6 +106,7 @@
                     tolerance: 'pointer',
                     start: function(event, ui) {
                         ui.item.addClass('ui-sortable-dragging');
+                        ui.placeholder.height(ui.item.height());
                     },
                     stop: function(event, ui) {
                         ui.item.removeClass('ui-sortable-dragging');
@@ -121,7 +122,7 @@
                     opacity: 0.7,
                     delay: 100,
                     distance: 5
-                });
+                }).disableSelection();
 
                 $('#newPhoto').click(function () {
                     imagePuzzle.startGame(images, gridSize);
