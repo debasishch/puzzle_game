@@ -21,6 +21,16 @@
         .ui-sortable-handle {
             touch-action: none;
         }
+
+        /* Enhance touch interaction visual feedback */
+        .ui-sortable-dragging {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        .ui-sortable-placeholder {
+            visibility: visible !important;
+            border: 2px dashed #ccc;
+            background: transparent;
+        }
     </style>
 </head>
 
@@ -58,7 +68,7 @@
         </div>
         <div id="gameOver" style="display:none;">
             <div class="dashboard">
-                <h2>You Loss</h2>
+                <h2 id="gameOverMessage">You Lose</h2>
                 <br />
                 <button type="button" onclick="window.location.reload(true);">Play more</button>
             </div>
@@ -77,6 +87,16 @@
                 { src: 'img/scenery.jpeg' }
             ];
 
+            function checkIfPuzzleCompleted() {
+                var items = $('#sortable').children();
+                for (var i = 0; i < items.length; i++) {
+                    if ($(items[i]).data('index') != i) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
             $(function () {
                 var gridSize = 3;
                 imagePuzzle.startGame(images, gridSize);
@@ -89,12 +109,18 @@
                     },
                     stop: function(event, ui) {
                         ui.item.removeClass('ui-sortable-dragging');
+                        if (checkIfPuzzleCompleted()) {
+                            $('#gameOverMessage').text('You Win!');
+                            $('#gameOver').show();
+                        }
                     },
                     change: function(event, ui) {
                         ui.placeholder.css({ visibility: 'visible', border: '1px dashed #ccc' });
                     },
                     placeholder: 'ui-sortable-placeholder',
-                    opacity: 0.7
+                    opacity: 0.7,
+                    delay: 100,
+                    distance: 5
                 });
 
                 $('#newPhoto').click(function () {
